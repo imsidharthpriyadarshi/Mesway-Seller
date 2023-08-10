@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="seller.in.mesway.fragments.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_notificationFragment"
+            app:destination="@id/notificationFragment"
+            app:enterAnim="@anim/zoom_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/zoom_out"
+            app:popExitAnim="@anim/fade_out"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_canceMealsFragment"
+            app:destination="@id/canceMealsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_totalEarningFragment"
+            app:destination="@id/totalEarningFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_todayMealsFragment"
+            app:destination="@id/todayMealsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_activeSubscriptionFragment"
+            app:destination="@id/activeSubscriptionFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_pendingSubscriptionFragment"
+            app:destination="@id/pendingSubscriptionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="seller.in.mesway.fragments.home.NotificationFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/todayMealsFragment"
+        android:name="seller.in.mesway.fragments.home.TodayMealsFragment"
+        android:label="fragment_today_meals"
+        tools:layout="@layout/fragment_today_meals" >
+        <action
+            android:id="@+id/action_todayMealsFragment_to_takePaymentBottomsheetDialogFragment"
+            app:destination="@id/takePaymentBottomsheetDialogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/canceMealsFragment"
+        android:name="seller.in.mesway.fragments.home.CancelMealsFragment"
+        android:label="fragment_cance_meals"
+        tools:layout="@layout/fragment_cance_meals" />
+    <fragment
+        android:id="@+id/pendingSubscriptionFragment"
+        android:name="seller.in.mesway.fragments.home.PendingSubscriptionFragment"
+        android:label="fragment_pending_subscription"
+        tools:layout="@layout/fragment_pending_subscription" >
+        <action
+            android:id="@+id/action_pendingSubscriptionFragment_to_rejectSubsBottomSheetFragment"
+            app:destination="@id/rejectSubsBottomSheetFragment" />
+        <argument
+            android:name="have_to_load"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/activeSubscriptionFragment"
+        android:name="seller.in.mesway.fragments.home.ActiveSubscriptionFragment"
+        android:label="fragment_active_subscription"
+        tools:layout="@layout/fragment_active_subscription" />
+    <fragment
+        android:id="@+id/totalEarningFragment"
+        android:name="seller.in.mesway.fragments.home.TotalEarningFragment"
+        android:label="fragment_total_earning"
+        tools:layout="@layout/fragment_total_earning" />
+    <dialog
+        android:id="@+id/takePaymentBottomsheetDialogFragment"
+        android:name="seller.in.mesway.fragments.home.TakePaymentBottomsheetDialogFragment"
+        android:label="fragment_take_payment_bottomsheet_dialog"
+        tools:layout="@layout/fragment_take_payment_bottomsheet_dialog" >
+        <argument
+            android:name="mess_id"
+            app:argType="string" />
+        <argument
+            android:name="subs_id"
+            app:argType="string" />
+        <argument
+            android:name="detail"
+            app:argType="string" />
+        <argument
+            android:name="amount"
+            app:argType="string" />
+    </dialog>
+    <dialog
+        android:id="@+id/rejectSubsBottomSheetFragment"
+        android:name="seller.in.mesway.fragments.home.RejectSubsBottomSheetFragment"
+        android:label="fragment_reject_subs_bottom_sheet"
+        tools:layout="@layout/fragment_reject_subs_bottom_sheet" >
+        <argument
+            android:name="subs_id"
+            app:argType="string" />
+    </dialog>
+</navigation>

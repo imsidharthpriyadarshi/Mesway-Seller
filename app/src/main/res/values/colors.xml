@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#FFAB00</color>
+    <color name="colorPrimaryVariant">#CC8800</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="card_background">#E8E8E8</color>
+    <color name="green">#00953E</color>
+    <color name="background">#F4F4F4</color>
+    <color name="red">#A60202</color>
+    <color name="breakfast">#00C853</color>
+    <color name="dinner">#304FFE</color>
+    <color name="lunch">#FF6D00</color>
+    <color name="placeholder_background">#dddddd</color>
+    <color name="grey">#4C4C4C</color>
+
+    <color name="ucrop_color_toolbar">@color/colorPrimary</color>
+    <color name="ucrop_color_statusbar">@color/colorPrimary</color>
+    <color name="ucrop_color_widget_active">@color/colorPrimary</color>
+
+
+</resources>

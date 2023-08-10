@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.home.TodayMealsFragment"
+    android:background="@color/background">
+   <!-- for error scroll view can only host one direct child-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+            <LinearLayout
+                android:id="@+id/layout_today_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/img_refresh_upcoming_meal"
+                >
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/date_shimmer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:shimmer_duration="1200"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    >
+                    <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_45"
+                        android:padding="@dimen/dp_10"
+                        android:background="@color/placeholder_background"
+                        android:textSize="@dimen/dp_20"
+                        android:fontFamily="sans-serif-medium"
+                        />
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/t_today_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_10"
+                    android:textSize="@dimen/dp_20"
+                    android:text="Sun, 19 Feb 2023"
+                    android:fontFamily="sans-serif-medium"
+                    />
+
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_refresh_upcoming_meal"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:src="@drawable/ic_baseline_sync_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/dp_10"
+                app:layout_constraintTop_toTopOf="@+id/layout_today_date"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_today_date"
+                />
+
+
+
+
+            <LinearLayout
+                android:id="@+id/profile_cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_10"
+                android:orientation="horizontal"
+                app:cardCornerRadius="@dimen/dp_10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_today_date">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_background"
+                    android:paddingStart="@dimen/dp_10"
+                    android:paddingTop="@dimen/dp_20"
+                    android:paddingEnd="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_20">
+
+                    <TextView
+                        android:id="@+id/t_total_meals"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Today Meals"
+                        android:textSize="@dimen/dp_24"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
+
+                    <TextView
+                        android:id="@+id/t_total_meals_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:text="0"
+                        android:textSize="@dimen/dp_20"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/t_total_meals" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cons_balance"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_background"
+                    android:paddingStart="@dimen/dp_10"
+                    android:paddingTop="@dimen/dp_20"
+                    android:paddingEnd="@dimen/dp_10"
+                    android:paddingBottom="@dimen/dp_20">
+
+                    <TextView
+                        android:id="@+id/t_left_meals"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Left Meals"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp_24"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/t_left_meals_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:text="0"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp_20"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/t_left_meals" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cons_subscription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/profile_cardView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:background="@drawable/edit_text_background"
+                android:padding="@dimen/dp_20"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delivered meals"
+                    android:textSize="@dimen/dp_20"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:fontFamily="sans-serif-medium"
+                    />
+                <TextView
+                    android:id="@+id/t_delivered_meal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textSize="@dimen/dp_20"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <TextView
+                android:id="@+id/txt_upcoming_meal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Today Meals"
+                android:layout_margin="@dimen/dp_10"
+                android:textStyle="bold"
+
+                app:layout_constraintTop_toBottomOf="@+id/cons_subscription"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="@dimen/dp_20"
+                />
+
+            <LinearLayout
+                android:id="@+id/ln_filter_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_5"
+                android:orientation="horizontal"
+                android:padding="@dimen/dp_10"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/txt_upcoming_meal">
+
+                <ImageView
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/outline_filter_list_24" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/chip_group"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_5"
+                        app:singleSelection="true">
+
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_breakfast"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="4dp"
+                            android:enabled="false"
+                            android:fontFamily="sans-serif-medium"
+
+                            android:padding="5dp"
+                            android:text="Breakfast"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dp_14"
+                            app:checkedIconEnabled="true"
+                            app:chipCornerRadius="@dimen/dp_5" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_lunch"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="4dp"
+                            android:enabled="false"
+                            android:fontFamily="sans-serif-medium"
+                            android:padding="@dimen/dp_1"
+                            android:text="Lunch"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dp_14"
+                            app:checkedIconEnabled="true"
+                            app:chipCornerRadius="@dimen/dp_5" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chip_dinner"
+                            style="@style/Widget.MaterialComponents.Chip.Choice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:elevation="4dp"
+                            android:enabled="false"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="Dinner"
+
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/dp_14"
+                            app:checkedIconEnabled="true"
+                            app:chipCornerRadius="@dimen/dp_5" />
+
+                        <!-- <com.google.android.material.chip.Chip
+                             android:id="@+id/chip_one_meal"
+                             style="@style/Widget.MaterialComponents.Chip.Choice"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             app:checkedIconEnabled="true"
+                             android:elevation="4dp"
+                             android:textSize="@dimen/dp_14"
+
+                             android:textColor="@color/black"
+                             android:fontFamily="sans-serif-medium"
+                             android:text="One meal"
+                             app:chipCornerRadius="@dimen/dp_5" />
+
+                         <com.google.android.material.chip.Chip
+                             android:id="@+id/chip_two_meal"
+                             style="@style/Widget.MaterialComponents.Chip.Choice"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             app:checkedIconEnabled="true"
+                             android:elevation="4dp"
+                             android:textSize="@dimen/dp_14"
+
+                             android:textColor="@color/black"
+                             android:fontFamily="sans-serif-medium"
+                             android:text="Two Meal"
+                             app:chipCornerRadius="@dimen/dp_5" />
+
+                         <com.google.android.material.chip.Chip
+                             android:id="@+id/chip_three_meal"
+                             style="@style/Widget.MaterialComponents.Chip.Choice"
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             app:checkedIconEnabled="true"
+                             android:textSize="@dimen/dp_14"
+
+                             android:elevation="4dp"
+                             android:textColor="@color/black"
+                             android:fontFamily="sans-serif-medium"
+                             android:text="Three Meal"
+                             app:chipCornerRadius="@dimen/dp_5" />
+             -->
+
+
+                    </com.google.android.material.chip.ChipGroup>
+
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etl_search_by_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:visibility="invisible"
+                android:layout_height="@dimen/dp_50"
+                android:hint="Search by name/subs id"
+                app:boxStrokeColor="@color/white"
+                android:elevation="@dimen/dp_4"
+                app:boxStrokeWidth="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ln_filter_layout"
+                app:layout_constraintEnd_toEndOf="@+id/ln_filter_layout"
+                app:layout_constraintStart_toStartOf="@+id/ln_filter_layout"
+                app:layout_constraintTop_toTopOf="@+id/ln_filter_layout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_search_by_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_50"
+                    android:background="@drawable/edit_text_background"
+                    android:imeOptions="flagNoExtractUi"
+                    android:inputType="text"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp_16" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rec_view_today_meal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_12"
+                app:layout_constraintBottom_toTopOf="@+id/bottom_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/ln_filter_layout" />
+
+            <LinearLayout
+                android:id="@+id/ln_no_upcoming_meal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/bottom_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_upcoming_meal"
+                >
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_180"
+                    app:lottie_rawRes="@raw/sad_empty_box"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+
+
+                    />
+                <TextView
+                    android:id="@+id/t_no_meals"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/dp_16"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:text="No Today Meals"/>
+            </LinearLayout>
+            <View
+                android:id="@+id/bottom_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_80"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rec_view_today_meal" />
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/img_search"
+                android:layout_width="@dimen/dp_28"
+                android:layout_height="@dimen/dp_28"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/ic_baseline_search"
+                app:layout_constraintBottom_toBottomOf="@+id/ln_filter_layout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ln_filter_layout" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

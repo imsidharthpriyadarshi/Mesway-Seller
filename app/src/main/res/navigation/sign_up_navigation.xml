@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sign_up_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="seller.in.mesway.fragments.signup.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_receiveOtpFragment"
+            app:destination="@id/receiveOtpFragment"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slideout_from_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slideout_from_right" />
+        <action
+            android:id="@+id/action_loginFragment_to_firstSignupFragment"
+            app:destination="@id/firstSignupFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_secondStepFragment"
+            app:destination="@id/secondStepFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_thirdStepFragment"
+            app:destination="@id/thirdStepFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_fourthStepFragment"
+            app:destination="@id/fourthStepFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_fifthStepFragment"
+            app:destination="@id/fifthStepFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_sixthStepFragment"
+            app:destination="@id/sixthStepFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_seventhStepFragment"
+            app:destination="@id/seventhStepFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/firstSignupFragment"
+        android:name="seller.in.mesway.fragments.signup.FirstSignupFragment"
+        android:label="fragment_first_signup"
+        tools:layout="@layout/fragment_first_signup" />
+    <fragment
+        android:id="@+id/secondStepFragment"
+        android:name="seller.in.mesway.fragments.registration.SecondStepFragment"
+        android:label="fragment_second_step"
+        tools:layout="@layout/fragment_second_step" />
+    <fragment
+        android:id="@+id/thirdStepFragment"
+        android:name="seller.in.mesway.fragments.registration.ThirdStepFragment"
+        android:label="fragment_third_step"
+        tools:layout="@layout/fragment_third_step" />
+    <fragment
+        android:id="@+id/fifthStepFragment"
+        android:name="seller.in.mesway.fragments.registration.FifthStepFragment"
+        android:label="fragment_fifth_step"
+        tools:layout="@layout/fragment_fifth_step" />
+    <fragment
+        android:id="@+id/finalSubsFragment"
+        android:name="seller.in.mesway.fragments.registration.FinalSubsFragment"
+        android:label="fragment_final_subs"
+        tools:layout="@layout/fragment_final_subs" />
+    <fragment
+        android:id="@+id/sixthStepFragment"
+        android:name="seller.in.mesway.fragments.registration.SixthStepFragment"
+        android:label="fragment_sixth_step"
+        tools:layout="@layout/fragment_sixth_step" />
+    <fragment
+        android:id="@+id/seventhStepFragment"
+        android:name="seller.in.mesway.fragments.registration.SeventhStepFragment"
+        android:label="fragment_seventh_step"
+        tools:layout="@layout/fragment_seventh_step" />
+    <fragment
+        android:id="@+id/receiveOtpFragment"
+        android:name="seller.in.mesway.fragments.signup.ReceiveOtpFragment"
+        android:label="fragment_receive_otp"
+        tools:layout="@layout/fragment_receive_otp">
+        <action
+            android:id="@+id/action_receiveOtpFragment_to_firstSignupFragment"
+            app:destination="@id/firstSignupFragment"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slideout_from_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slideout_from_right" />
+        <action
+            android:id="@+id/action_receiveOtpFragment_to_secondStepFragment"
+            app:destination="@id/secondStepFragment"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slideout_from_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slideout_from_right" />
+        <action
+            android:id="@+id/action_receiveOtpFragment_to_thirdStepFragment"
+            app:destination="@id/thirdStepFragment"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slideout_from_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slideout_from_right" />
+        <action
+            android:id="@+id/action_receiveOtpFragment_to_fourthStepFragment"
+            app:destination="@id/fourthStepFragment"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slideout_from_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slideout_from_right" />
+        <action
+            android:id="@+id/action_receiveOtpFragment_to_fifthStepFragment"
+            app:destination="@id/fifthStepFragment"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slideout_from_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slideout_from_right" />
+        <action
+            android:id="@+id/action_receiveOtpFragment_to_sixthStepFragment"
+            app:destination="@id/sixthStepFragment"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slideout_from_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slideout_from_right" />
+        <action
+            android:id="@+id/action_receiveOtpFragment_to_seventhStepFragment"
+            app:destination="@id/seventhStepFragment"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slideout_from_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slideout_from_right" />
+        <argument
+            android:name="number"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourthStepFragment"
+        android:name="seller.in.mesway.fragments.registration.FourthStepFragment"
+        android:label="fragment_fourth_step"
+        tools:layout="@layout/fragment_fourth_step" />
+    <fragment
+        android:id="@+id/oneDaySubsFragment"
+        android:name="seller.in.mesway.fragments.registration.OneDaySubsFragment"
+        android:label="fragment_one_day_subs"
+        tools:layout="@layout/fragment_one_day_subs">
+        <action
+            android:id="@+id/action_oneDaySubsFragment_to_finalSubsFragment"
+            app:destination="@id/finalSubsFragment"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slideout_from_left"
+            app:popEnterAnim="@anim/slide_from_left"
+            app:popExitAnim="@anim/slideout_from_right" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_secondStepFragment"
+        app:destination="@id/secondStepFragment"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/slideout_from_left"
+        app:popEnterAnim="@anim/slide_from_left"
+        app:popExitAnim="@anim/slideout_from_right" />
+    <action
+        android:id="@+id/action_global_thirdStepFragment"
+        app:destination="@id/thirdStepFragment"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/slideout_from_left"
+        app:popEnterAnim="@anim/slide_from_left"
+        app:popExitAnim="@anim/slideout_from_right" />
+    <action
+        android:id="@+id/action_global_fourthStepFragment"
+        app:destination="@id/fourthStepFragment"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/slideout_from_left"
+        app:popEnterAnim="@anim/slide_from_left"
+        app:popExitAnim="@anim/slideout_from_right" />
+    <action
+        android:id="@+id/action_global_fifthStepFragment"
+        app:destination="@id/fifthStepFragment"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/slideout_from_left"
+        app:popEnterAnim="@anim/slide_from_left"
+        app:popExitAnim="@anim/slideout_from_right" />
+    <action
+        android:id="@+id/action_global_sixthStepFragment"
+        app:destination="@id/sixthStepFragment"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/slideout_from_left"
+        app:popEnterAnim="@anim/slide_from_left"
+        app:popExitAnim="@anim/slideout_from_right" />
+    <action
+        android:id="@+id/action_global_seventhStepFragment"
+        app:destination="@id/seventhStepFragment"
+        app:enterAnim="@anim/slide_from_right"
+        app:exitAnim="@anim/slideout_from_left"
+        app:popEnterAnim="@anim/slide_from_left"
+        app:popExitAnim="@anim/slideout_from_right" />
+</navigation>

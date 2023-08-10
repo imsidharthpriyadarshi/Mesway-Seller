@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.home.TakePaymentBottomsheetDialogFragment">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:orientation="vertical"
+            android:background="@drawable/grey_background"
+            android:elevation="@dimen/dp_10"
+
+            >
+
+            <TextView
+                android:id="@+id/t_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Take 2000 subscription fee"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginTop="@dimen/dp_20"
+                android:textColor="@color/black"
+                android:textSize="@dimen/dp_25"
+
+                />
+
+            <TextView
+                android:id="@+id/t_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please take subscription fee from customer"
+                android:textColor="@color/black"
+                android:padding="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_40"
+                android:textSize="@dimen/dp_18"
+
+                />
+
+            <CheckBox
+                android:id="@+id/check_box_yes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center"
+                android:text="Yes, i have received full subscription fee"
+                android:layout_marginTop="@dimen/dp_10"
+                android:textSize="@dimen/dp_16"
+                />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cons_yes_i_received"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_60"
+
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="** Only when click on this button when you have received your full subscription fee  "
+                    android:textColor="@color/red"
+                    app:layout_constraintStart_toStartOf="@+id/btn_yes_i_received"
+                    app:layout_constraintBottom_toTopOf="@+id/btn_yes_i_received"
+                    android:textSize="@dimen/dp_12"
+
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_yes_i_received"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Yes, I have Received"
+                    android:enabled="false"
+                    style="@style/Widget.MaterialComponents.Button"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:padding="@dimen/dp_15"
+
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Mesway Seller</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="note_we_ll_consider_your_current_location_as_your_company_location_so_give_pincode_or_others_according_to_your_current_location">Note:- We\'ll consider your current location as your Mess location so give pinCode or other information according to your current location.</string>
+
+</resources>
