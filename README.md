@@ -1,5 +1,5 @@
 # Mesway Seller
-[![Google Play Store](https://img.shields.io/badge/Download%20on-Google%20Play-414141?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=in.mesway)
+[![Google Play Store](https://img.shields.io/badge/Download%20on-Google%20Play-414141?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=seller.in.mesway)
 
 Mesway Seller is an Android application designed to empower mess owners and meal providers to efficiently manage their offerings, orders, and interactions with customers. Mesway Seller streamlines order management, subscription management, and financial tracking, providing a comprehensive solution for running a successful food service business.
 
